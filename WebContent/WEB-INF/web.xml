@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Servlet_Basic</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 全局局部变量 所有servlet都可以访问-->
+  
+  <context-param>
+  <param-name>url</param-name>
+  <param-value>全局变量</param-value>
+  </context-param>
+  
+  <servlet>
+    <servlet-name>basic</servlet-name>
+    <servlet-class>com.qiwx.BasicServlet</servlet-class>
+   <!--  局部初始化servlet参数只有本servlet可以访问 -->
+     <init-param>
+        <param-name>username</param-name>
+        <param-value>amaker</param-value>
+        <!-- 可以多个 -->
+     </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>basic</servlet-name>
+  <url-pattern>/basic/BasicServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
